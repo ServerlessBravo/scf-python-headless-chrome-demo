@@ -38,7 +38,7 @@ async def test():
 1. 创建Zip包
 
     ```bash
-    zip -r headless_chrome_nodejs.zip . -x "*vendor*" -x "*.git*"
+    zip -r headless_chrome_python.zip . -x "*vendor*" -x "*.git*"
     ```
 2. 创建 Web 函数
 
