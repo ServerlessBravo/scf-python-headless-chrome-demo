@@ -61,6 +61,12 @@ async def test():
 
 ## 下载 Chromium
 
+**备注：也可以直接下载经过测试验证的 chromium 二进制文件:**
+
+chrome_r961656: [Download LInk](https://github.com/ServerlessBravo/scf-python-headless-chrome-demo/releases/download/v1.0/chrome_r961656.zip)
+
+下载之后，可以用于创建 Layer 并绑定到函数进行使用。
+
 ### 1.找到对应的 `Chromium` 版本
 
 ⚠️ 注意下载的版本和 `puppeteer` 之间的 [映射关系](https://github.com/puppeteer/puppeteer/blob/main/versions.js):
