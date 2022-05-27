@@ -95,7 +95,8 @@ async def test():
 
 通过控制台创建有50MB的限制，需要选择通过COS创建Layer的方式，提前把 Zip 文件放到 COS，然后按照下面的方式创建 Layer：
 
-** 备注：替换绑定语言为Python版本 ** 
+***备注：替换绑定语言为Python版本*** 
+
 
 ![](https://user-images.githubusercontent.com/251222/158583758-530e1d1d-41a1-4e38-82c4-3eb1f6c59aa3.png)
 
