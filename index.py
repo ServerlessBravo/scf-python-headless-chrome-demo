@@ -37,3 +37,8 @@ def main_handler(event, context):
     print(results)
 
     return results
+
+
+if __name__ == "__main__":
+
+    print(f"return value is {main_handler({}, {})}")
