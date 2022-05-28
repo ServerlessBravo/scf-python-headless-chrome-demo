@@ -1,5 +1,3 @@
-# -*- coding: utf8
-
 import os
 import sys
 
@@ -19,7 +17,15 @@ async def test():
                            logLevel=logging.ERROR,
                            executablePath='/opt/chrome-linux/chrome',
                            env={'PUPPETEER_SKIP_CHROMIUM_DOWNLOAD': 'true'},
-                           args=['--no-sandbox', '--window-size=1920,1080', '--disable-infobars'])
+                           args=[
+                               '--no-sandbox',
+                               '--disable-infobars',
+                               '--single-process',
+                               '--disable-dev-shm-usage',
+                               '--disable-gpu',
+                               '--no-zygote',
+                               '--window-size=1920,1080'
+                           ])
 
     page = await browser.newPage()
     await page.goto('http://baidu.com')
