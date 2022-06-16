@@ -182,7 +182,7 @@ DEBUG=puppeteer:*
 
 ## 其中 10000:10000 为云函数读写 CFS 文件时的用户名和用户组Id
 
-chmod 10000:10000 -R /mnt/foler
+chown 10000:10000 -R /mnt/foler
 ls -al /mnt/folder
 
 ```
