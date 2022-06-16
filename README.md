@@ -12,6 +12,8 @@ SCF中可以执行 `Chromium` 进行网页访问等操作，有两种使用方�
 
 index.py
 
+注意⚠️：: 初始化的 `browser` 实例在多次请求之前是可以复用的，没必要每次都要新建一个浏览器实例，可以通过缓存 `browser` 到全局变量中实现多次请求之间复用，只有在全局变量未设置的时候再进行初始化。
+
 ```python
 async def test():
     
@@ -24,7 +26,7 @@ async def test():
         # 如果采用CFS的方式安装，二进制文件在 /mnt 目录
         executablePath='/opt/chrome-linux/chrome', 
         env={'PUPPETEER_SKIP_CHROMIUM_DOWNLOAD':'true'}, 
-        args=['--no-sandbox', '--window-size=1920,1080', '--disable-infobars'])
+        args=['--no-sandbox', '--window-size=1920,1080', '--disable-infobars', '--disable-dev-shm-usage'])
 
     page = await browser.newPage()
     await page.goto('http://baidu.com')
@@ -32,6 +34,7 @@ async def test():
     print("Page title is " + title)
     await browser.close()
 ```
+
 
 ## 部署函数
 
