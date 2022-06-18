@@ -9,23 +9,24 @@ import asyncio
 import logging
 from pyppeteer import launch
 
-async def test():
 
+async def test():
     # Config for headless mode
-    browser = await launch(headless=True,
-                           userDataDir='/tmp/pyppeteer/',
-                           logLevel=logging.ERROR,
-                           executablePath='/opt/chrome-linux/chrome',
-                           env={'PUPPETEER_SKIP_CHROMIUM_DOWNLOAD': 'true'},
-                           args=[
-                               '--no-sandbox',
-                               '--disable-infobars',
-                               '--single-process',
-                               '--disable-dev-shm-usage',
-                               '--disable-gpu',
-                               '--no-zygote',
-                               '--window-size=1920,1080'
-                           ])
+    browser = await launch(
+            headless=True,
+            logLevel=logging.ERROR,
+            userDataDir='/tmp/pyppeteer/',
+            executablePath='/opt/chrome-linux/chrome',
+            env={'PUPPETEER_SKIP_CHROMIUM_DOWNLOAD': 'true'},
+            args=[
+                '--no-sandbox',
+                '--disable-infobars',
+                '--single-process',
+                '--disable-dev-shm-usage',
+                '--disable-gpu',
+                '--no-zygote',
+                '--window-size=1920,1080'
+                ])
 
     page = await browser.newPage()
     await page.goto('http://baidu.com')
